@@ -18,6 +18,6 @@ func (s *MetricService) CollectMetric(name string, value float64) error {
 		Name:      name,
 		Value:     value,
 		Timestamp: time.Now(),
-	}ł
+	}
 	return s.repo.Save(metric)
 }
