@@ -1,0 +1,17 @@
+# prometheus.yml - Prometheus configuration file
+
+global:
+  scrape_interval: 15s  # How frequently to scrape targets
+
+scrape_configs:
+  - job_name: 'monitoring-dashboard'  # A name for this job
+
+    static_configs:
+      - targets: ['localhost:8080']  # Your application's address (adjust the port as needed)
+
+    metrics_path: '/metrics'  # Path for Prometheus to scrape metrics from
+
+    # Optional: You can add relabel_configs to modify the target URLs if necessary.
+    # relabel_configs:
+    #   - source_labels: [__address__]
+    #     target_label: instance
